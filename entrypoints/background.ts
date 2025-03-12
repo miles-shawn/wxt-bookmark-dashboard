@@ -1,7 +1,7 @@
 export default defineBackground(() => {
   browser.runtime.onInstalled.addListener(async ({ reason }) => {
     if (reason === 'install') {
-      const url = browser.runtime.getURL('/dashboard.html');
+      const url = browser.runtime.getURL('/dashboard.html#/readme');
       await browser.tabs.create({ url });
     }
   });
@@ -16,7 +16,8 @@ export default defineBackground(() => {
         browser.tabs.update(tab.id, { active: true });
       }
     } else {
-      await browser.tabs.create({ url });
+      const lastVisitedRouteValue = await lastVisitedRoute.getValue();
+      await browser.tabs.create({ url: `${url}#${lastVisitedRouteValue}` });
     }
   });
 });

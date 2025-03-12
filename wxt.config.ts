@@ -12,6 +12,6 @@ export default defineConfig({
     description,
     version: '0.0.1',
     action: { default_title: description },
-    permissions: ['tabs'],
+    permissions: ['tabs', 'storage'],
   },
 });

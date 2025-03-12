@@ -1,13 +1,10 @@
 <script setup lang="ts">
 // TODO:
-browser.runtime.onMessage.addListener((message) => {
-  alert(message);
-});
 </script>
 
 <template>
   <div>
-    <RouterView />
+    <p>TODO: Add more details here.</p>
   </div>
 </template>
 
