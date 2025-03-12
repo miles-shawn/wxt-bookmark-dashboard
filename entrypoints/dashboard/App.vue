@@ -6,7 +6,7 @@ browser.runtime.onMessage.addListener((message) => {
 </script>
 
 <template>
-  <div>
+  <div text="base xl:xl" prose="~ gray dark:invert" font="[Lato,sans-serif]">
     <RouterView />
   </div>
 </template>
