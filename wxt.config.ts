@@ -1,3 +1,4 @@
+import UnoCSS from 'unocss/vite';
 import { defineConfig } from 'wxt';
 
 const description = 'Manage your bookmarks through a dashboard.';
@@ -13,5 +14,14 @@ export default defineConfig({
     version: '0.0.1',
     action: { default_title: description },
     permissions: ['tabs', 'storage'],
+  },
+  vite: () => ({
+    plugins: [UnoCSS()],
+  }),
+  runner: {
+    startUrls: [
+      'http://localhost:3000/__unocss#/',
+      //
+    ],
   },
 });
